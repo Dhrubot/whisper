@@ -6,7 +6,7 @@ import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons'
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
+import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from '../constants/Colors'
 
@@ -30,7 +30,9 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ 
       headerStyle: {
-        backgroundColor: Colors.light.tint
+        backgroundColor: Colors.light.tint,
+        shadowOpacity: 0,
+        elevation: 0
       },
       headerTintColor: Colors.light.background,
       headerTitleAlign: 'left',
@@ -40,7 +42,7 @@ function RootNavigator() {
     }}>
       <Stack.Screen 
         name="Root" 
-        component={BottomTabNavigator}
+        component={MainTabNavigator}
         options={{
           title: 'Whisper',
           headerRight: () => (
