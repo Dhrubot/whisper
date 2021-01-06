@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
+import chatRooms from '../data/ChatRooms'
+
 import { Text, View } from '../components/Themed';
 import ChatListItem from '../components/ChatListItem'
 
 export default function ChatScreen() {
   return (
     <View style={styles.container}>
-      <ChatListItem chatRoom={{lastMessage:{content: 'Hello There!'}}} />
+      <ChatListItem chatRoom={chatRooms[0]} />
     </View>
   );
 }
