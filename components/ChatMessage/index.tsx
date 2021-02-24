@@ -1,18 +1,35 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import { Message } from '../../types'
+import moment from "moment";
+import React from "react";
+import { View, Text } from "react-native";
+import { Message } from "../../types";
+import styles from "./styles";
 
 export type ChatMessageProps = {
-    message: Message
-}
+  message: Message;
+};
 
 const ChatMessage = (props: ChatMessageProps) => {
-    const { message } = props
-    return (
-        <View>
-            <Text>{ message.content }</Text>
-        </View>
-    )
-}
+  const { message } = props;
 
-export default ChatMessage
+  const isMyMessage = () => {
+    return message.user.id === "u1";
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={[
+          styles.messageBox,
+          {backgroundColor: isMyMessage() ? '#B0E0E6' : '#e5e5e5',
+          marginRight: isMyMessage() ? 0 : 50,
+          marginLeft: isMyMessage() ? 50 : 0
+         }
+          ]}>
+        {!isMyMessage() && <Text style={styles.name}>{message.user.name}</Text>}
+        <Text style={styles.content}>{message.content}</Text>
+        <Text style={styles.time}>{moment(message.createdAt).fromNow()}</Text>
+      </View>
+    </View>
+  );
+};
+
+export default ChatMessage;
