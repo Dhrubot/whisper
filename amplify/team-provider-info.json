@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whisper-dev-150659-authRole",
+      "UnauthRoleArn": "arn:aws:iam::348733048630:role/amplify-whisper-dev-150659-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::348733048630:role/amplify-whisper-dev-150659-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whisper-dev-150659-deployment",
+      "UnauthRoleName": "amplify-whisper-dev-150659-unauthRole",
+      "StackName": "amplify-whisper-dev-150659",
+      "StackId": "arn:aws:cloudformation:us-east-1:348733048630:stack/amplify-whisper-dev-150659/2e392110-7d25-11eb-a4a1-0e5c31da0605",
+      "AmplifyAppId": "d3vtnaxnw43gzc"
+    }
+  }
+}
