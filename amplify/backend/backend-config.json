@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "whisper0bcf599e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
