@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "whisper",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authwhisper0bcf599e",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
