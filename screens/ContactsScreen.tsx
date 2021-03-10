@@ -1,9 +1,32 @@
-import React from 'react'
+import { API, graphqlOperation } from 'aws-amplify';
+import React, { useEffect, useState } from 'react'
 import { View, Text, FlatList, StyleSheet} from 'react-native'
 import ContactListItem from '../components/ContactListItem';
-import users from "../data/Users";
+import { listUsers } from '../src/graphql/queries';
 
 const ContactsScreen = () => {
+
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+
+      try {
+        const usersData = await API.graphql(
+          graphqlOperation(
+            listUsers
+          )
+        )
+        setUsers(usersData.data.listUsers.items)
+      } catch (e) {
+        console.log(e)
+      }
+      
+    }
+
+    fetchUsers()
+  }, [])
+
     return (
         <View style={styles.container}>
         <FlatList
